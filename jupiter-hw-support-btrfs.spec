@@ -6,7 +6,8 @@ License:    	MIT
 URL:            https://github.com/KyleGospo/jupiter-hw-support
 
 VCS:            {{{ git_dir_vcs }}}
-Source:        	{{{ git_dir_pack }}}
+Source0:        {{{ git_dir_pack }}}
+Source1:        https://gitlab.com/popsulfr/steamos-btrfs/-/raw/main/files/etc/default/steamos-btrfs
 
 Patch0:         fedora.patch
 Patch1:	        https://gitlab.com/popsulfr/steamos-btrfs/-/raw/main/files/usr/lib/hwsupport/sdcard-mount.sh.patch
@@ -54,6 +55,7 @@ cp -rv usr/lib/udev %{buildroot}%{_prefix}/lib/udev
 cp -rv usr/bin/* %{buildroot}%{_bindir}
 cp -rv usr/lib/systemd/system/* %{buildroot}%{_unitdir}
 cp -rv etc/* %{buildroot}%{_sysconfdir}
+cp %{SOURCE1} %{buildroot}%{_sysconfdir}/default/steamos-btrfs
 # Remove unneeded files
 rm %{buildroot}%{_sysconfdir}/default/grub-steamos
 rm %{buildroot}%{_datadir}/jupiter_bios_updater/h2offt-g
@@ -81,6 +83,7 @@ rm -rf %{buildroot}%{_unitdir}/multi-user.target.wants
 %files
 %license LICENSE
 # %%{_sysconfdir}/default/grub-steamos
+%{_sysconfdir}/default/steamos-btrfs
 %{_sysconfdir}/systemd/system/sdcard-mount@.service
 %{_sysconfdir}/systemd/system/alsa-restore.service
 %{_sysconfdir}/xdg/kded5rc
