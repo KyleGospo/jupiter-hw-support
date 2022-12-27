@@ -11,11 +11,11 @@ Source:        	{{{ git_dir_pack }}}
 Patch0:         fedora.patch
 
 Requires:		python3
-Requires:		python-evdev
-Requires:		python-crcmod
-Requires:		python-click
-Requires:		python-progressbar2
-Requires:		python-hidapi
+Requires:		python3-libevdev
+Requires:		python3-crcmod
+Requires:		python3-click
+Requires:		python3-progressbar2
+Requires:		python3-hidapi
 Requires:		dmidecode
 Requires:		jq
 Requires:		alsa-utils
