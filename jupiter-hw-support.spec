@@ -59,12 +59,18 @@ rm -rf %{buildroot}%{_unitdir}/multi-user.target.wants
 
 # Do post-installation
 %post
+%systemd_post jupiter-biosupdate.service
+%systemd_post jupiter-controller-update.service
 
 # Do before uninstallation
 %preun
+%systemd_preun jupiter-biosupdate.service
+%systemd_preun jupiter-controller-update.service
 
 # Do after uninstallation
 %postun
+%systemd_postun_with_restart jupiter-biosupdate.service
+%systemd_postun_with_restart jupiter-controller-update.service
 
 # This lists all the files that are included in the rpm package and that
 # are going to be installed into target system where the rpm is installed.
