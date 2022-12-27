@@ -1,4 +1,4 @@
-Name:           jupiter-hw-support
+Name:           jupiter-hw-support-btrfs
 Version:        {{{ git_dir_version }}}
 Release:        1%{?dist}
 Summary:        Steam Deck Hardware Support Package
@@ -9,6 +9,8 @@ VCS:            {{{ git_dir_vcs }}}
 Source:        	{{{ git_dir_pack }}}
 
 Patch0:         fedora.patch
+Patch1:	        https://gitlab.com/popsulfr/steamos-btrfs/-/raw/main/files/usr/lib/hwsupport/sdcard-mount.sh.patch
+Patch2:	        https://gitlab.com/popsulfr/steamos-btrfs/-/raw/main/files/usr/lib/hwsupport/format-sdcard.sh.patch
 
 Requires:		python3
 Requires:		python3-libevdev
@@ -34,6 +36,8 @@ SteamOS 3.0 Steam Deck Hardware Support Package
 %prep
 {{{ git_dir_setup_macro }}}
 %patch0
+%patch1
+%patch2
 
 %build
 
