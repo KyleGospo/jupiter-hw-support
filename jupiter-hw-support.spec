@@ -16,6 +16,7 @@ Requires:		python3-crcmod
 Requires:		python3-click
 Requires:		python3-progressbar2
 Requires:		python3-hid
+Requires:		hidapi
 Requires:		dmidecode
 Requires:		jq
 Requires:		alsa-utils
