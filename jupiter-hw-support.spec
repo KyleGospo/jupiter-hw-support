@@ -15,7 +15,7 @@ Requires:		python3-libevdev
 Requires:		python3-crcmod
 Requires:		python3-click
 Requires:		python3-progressbar2
-Requires:		python3-hidapi
+Requires:		python3-hid
 Requires:		dmidecode
 Requires:		jq
 Requires:		alsa-utils
