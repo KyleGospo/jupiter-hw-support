@@ -36,8 +36,8 @@ SteamOS 3.0 Steam Deck Hardware Support Package
 %prep
 {{{ git_dir_setup_macro }}}
 %patch0
-%patch1
-%patch2
+%patch1 -p1
+%patch2 -p1
 
 %build
 
