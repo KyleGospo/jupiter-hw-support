@@ -2,7 +2,7 @@ Name:           jupiter-hw-support-btrfs
 Version:        {{{ git_dir_version }}}
 Release:        1%{?dist}
 Summary:        Steam Deck Hardware Support Package
-License:    	MIT
+License:    	GPLv3
 URL:            https://github.com/KyleGospo/jupiter-hw-support
 
 VCS:            {{{ git_dir_vcs }}}
